@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+
+import Dashboard from "./containers/Dashboard";
+import Login from "./containers/Login";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [isLoggedIn, setLoggedIn] = useState(false);
+
+	const handleLogin = () => {
+		setLoggedIn(true);
+	};
+
+	return (
+		<div className="App">
+			{isLoggedIn ? <Dashboard /> : <Login onLogin={handleLogin} />}
+		</div>
+	);
 }
 
 export default App;
