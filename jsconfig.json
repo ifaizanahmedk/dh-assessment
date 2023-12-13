@@ -1,8 +1,8 @@
 {
-	"compilerOptions": {
-		"baseUrl": "src",
-		"jsx": "preserve"
-	},
-	"exclude": ["node_modules"],
-	"include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "src/**/*"]
+  "compilerOptions": {
+    "baseUrl": ".",
+    "jsx": "preserve"
+  },
+  "exclude": ["node_modules"],
+  "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "src/**/*"]
 }

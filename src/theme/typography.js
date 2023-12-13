@@ -11,7 +11,7 @@ const defaultHeadingStyles = css`
 
 export const H1 = styled.h1`
   ${defaultHeadingStyles}
-  font-family: ${({ theme }) => theme.fonts.secondary};
+  font-family: ${({ theme }) => theme.fonts.primary};
   font-size: 32px;
 
   @media ${DEVICE.xl} {
@@ -25,7 +25,7 @@ export const H1 = styled.h1`
 
 export const H2 = styled.h2`
   ${defaultHeadingStyles}
-  font-family: ${({ theme }) => theme.fonts.secondary};
+  font-family: ${({ theme }) => theme.fonts.primary};
   font-size: 27px;
 
   @media ${DEVICE.xxl} {
@@ -38,30 +38,30 @@ export const H2 = styled.h2`
 
 export const H3 = styled.h3`
   ${defaultHeadingStyles}
-  font-family: ${({ theme }) => theme.fonts.secondary};
+  font-family: ${({ theme }) => theme.fonts.primary};
   font-size: 24px;
 `;
 
 export const H4 = styled.h4`
   ${defaultHeadingStyles}
-  font-family: ${({ theme }) => theme.fonts.secondary};
+  font-family: ${({ theme }) => theme.fonts.primary};
   font-size: 20px;
 `;
 
 export const H5 = styled.h5`
   ${defaultHeadingStyles}
-  font-family: ${({ theme }) => theme.fonts.secondary};
+  font-family: ${({ theme }) => theme.fonts.primary};
   font-size: 17px;
 `;
 
 export const H6 = styled.h6`
   ${defaultHeadingStyles}
-  font-family: ${({ theme }) => theme.fonts.secondary};
+  font-family: ${({ theme }) => theme.fonts.primary};
   font-size: 15px;
 `;
 
 export const Paragraph = styled.p`
-  font-family: ${({ theme }) => theme.fonts.primary};
+  font-family: ${({ theme }) => theme.fonts.secondary};
   margin: ${(props) => (props.noMargin ? 0 : "0 0 1em")};
   font-size: 13px;
 

@@ -6,8 +6,8 @@ import {
   Input as AntInput,
 } from "antd";
 
-import { COLOR, SPACING } from "../../../theme";
-import { H2 } from "../../../theme/typography";
+import { H2 } from "theme/typography";
+import { COLOR, SPACING } from "theme";
 
 export const FormTitle = styled(H2)`
   color: ${({ theme }) => theme.colors.heading};
@@ -19,7 +19,7 @@ export const FormTitle = styled(H2)`
 
 export const Form = styled(AntForm)`
   flex: 1 0 100%;
-  max-width: 480px;
+  max-width: 400px;
   width: 100%;
   padding: ${SPACING.x6};
 `;
@@ -50,6 +50,9 @@ export const ForgotPassword = styled.a`
 
 export const StyledButton = styled(AntButton)`
   width: 100%;
-  border-radius: 6px;
   margin-top: ${SPACING.x4};
+  height: 42px !important;
+  letter-spacing: 1px;
+  border-radius: 6px !important;
+  background-color: ${({ theme }) => theme.colors.primary};
 `;

@@ -10,10 +10,11 @@ import {
   Input,
   StyledButton,
 } from "./styled";
+import { Paragraph } from "theme/typography";
 
 const LoginForm = ({ onLogin }) => {
   const onFinish = (values) => {
-    onLogin();
+    onLogin(values);
     console.log("Success:", values);
   };
 
@@ -29,7 +30,7 @@ const LoginForm = ({ onLogin }) => {
       onFinishFailed={onFinishFailed}
     >
       <FormTitle>Dubai Holding App</FormTitle>
-      <p>Login to the Dashboard</p>
+      <Paragraph>Login to the Dashboard</Paragraph>
       <FormItem
         name="username"
         rules={[
