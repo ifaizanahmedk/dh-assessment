@@ -1,4 +1,4 @@
 export const FONT = {
-	PRIMARY: "Montserrat, Arial, Helvetica, sans-serif",
-	SECONDARY: "Open Sans, Arial, Helvetica, sans-serif",
+  PRIMARY: "Josefin Sans, Arial, Helvetica, sans-serif",
+  SECONDARY: "Rethink Sans, Arial, Helvetica, sans-serif",
 };

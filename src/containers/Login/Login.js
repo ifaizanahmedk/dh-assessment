@@ -1,41 +1,21 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-import { LoginContainer, StyledButton, StyledInput, Title } from "./styled";
+import React from "react";
+
+import { ReactComponent as DataExtractionImage } from "assets/images/data-extraction.svg";
+
+import { LoginContainer, LoginBox, IllustrationWrapper } from "./styled";
+import LoginForm from "./form";
 
 const Login = ({ onLogin }) => {
-	const [username, setUsername] = useState("");
-	const [password, setPassword] = useState("");
-
-	const handleLogin = () => {
-		if (username === "yourUsername" && password === "yourPassword") {
-			onLogin();
-		} else {
-			alert("Invalid credentials");
-		}
-	};
-
-	return (
-		<LoginContainer>
-			<Title>Login</Title>
-			<StyledInput
-				placeholder="Username"
-				value={username}
-				onChange={(e) => setUsername(e.target.value)}
-			/>
-			<StyledInput.Password
-				placeholder="Password"
-				value={password}
-				onChange={(e) => setPassword(e.target.value)}
-			/>
-			<StyledButton type="primary" onClick={handleLogin}>
-				Login
-			</StyledButton>
-		</LoginContainer>
-	);
-};
-
-Login.propTypes = {
-	onLogin: PropTypes.func.isRequired,
+  return (
+    <LoginContainer>
+      <LoginBox>
+        <IllustrationWrapper>
+          <DataExtractionImage />
+        </IllustrationWrapper>
+        <LoginForm onLogin={onLogin} />
+      </LoginBox>
+    </LoginContainer>
+  );
 };
 
 export default Login;

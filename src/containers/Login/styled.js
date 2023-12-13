@@ -1,26 +1,61 @@
 import styled from "styled-components";
-
-import { Button, Input } from "antd";
+import { DEVICE, SPACING } from "../../theme";
 
 export const LoginContainer = styled.div`
-	max-width: 300px;
-	margin: 0 auto;
-	background-color: ${({ theme }) => theme.colors.background};
-	padding: 20px;
-	border-radius: 8px;
-	box-shadow: ${({ theme }) => theme.colors.boxShadow};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: ${({ theme }) => theme.colors.background};
 `;
 
-export const Title = styled.h1`
-	text-align: center;
-	color: ${({ theme }) => theme.colors.primary};
-	margin-bottom: 20px;
+export const LoginPage = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: ${({ theme }) => theme.colors.background};
 `;
 
-export const StyledInput = styled(Input)`
-	margin-bottom: 15px;
+export const LoginBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 1000px;
+  width: 100%;
+  margin: ${SPACING.x6};
+  background-color: ${({ theme }) => theme.colors.background};
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.16);
+  overflow: hidden;
+  border-radius: 12px;
+  padding: ${SPACING.x16} ${SPACING.x6};
+  gap: ${SPACING.x10};
+
+  @media ${DEVICE.lg} {
+    flex-direction: row-reverse;
+  }
 `;
 
-export const StyledButton = styled(Button)`
-	width: 100%;
+export const LoginForm = styled.form`
+  flex: 1 0 100%;
+  max-width: 480px;
+  width: 100%;
+  padding: ${SPACING.x6};
+`;
+
+// Illustration wrapper styles
+export const IllustrationWrapper = styled.div`
+  display: flex;
+  align-items: flex-end;
+  max-width: 800px;
+  min-height: 100%;
+  background-color: ${({ theme }) => theme.colors.background};
+
+  img,
+  svg {
+    display: block;
+    width: 100%;
+    min-width: 300px;
+  }
 `;
