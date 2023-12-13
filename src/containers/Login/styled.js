@@ -24,12 +24,13 @@ export const LoginBox = styled.div`
   flex-direction: column;
   max-width: 1000px;
   width: 100%;
+  min-height: 50vh;
   margin: ${SPACING.x6};
   background-color: ${({ theme }) => theme.colors.background};
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.16);
   overflow: hidden;
   border-radius: 12px;
-  padding: ${SPACING.x16} ${SPACING.x6};
+  padding: ${SPACING.x16};
   gap: ${SPACING.x10};
 
   @media ${DEVICE.lg} {
@@ -49,6 +50,7 @@ export const IllustrationWrapper = styled.div`
   display: flex;
   align-items: flex-end;
   max-width: 800px;
+  width: 100%;
   min-height: 100%;
   background-color: ${({ theme }) => theme.colors.background};
 
