@@ -12,7 +12,7 @@ import { COLOR, SPACING } from "theme";
 export const FormTitle = styled(H2)`
   color: ${({ theme }) => theme.colors.heading};
   font-family: ${({ theme }) => theme.fonts.primary};
-  font-weight: bold;
+  font-weight: 700;
   line-height: 1;
   margin-bottom: 0;
 `;
