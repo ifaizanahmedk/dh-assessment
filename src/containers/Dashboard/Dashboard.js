@@ -10,9 +10,6 @@ const { RangePicker } = DatePicker;
 
 const Dashboard = () => {
   const [dateRange, setDateRange] = useState(null);
-  const [filteredCompanies, setFilteredCompanies] = useState([]);
-  const [profileData, setProfileData] = useState({});
-  const [newsData, setNewsData] = useState([]);
 
   const handleDateChange = (dates) => {
     setDateRange(dates);

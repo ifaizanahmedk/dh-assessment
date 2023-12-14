@@ -18,7 +18,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (localUser.isLoggedIn) {
+    if (localUser?.isLoggedIn) {
       navigate(DASHBOARD_ROUTE);
     }
   }, [localUser]);

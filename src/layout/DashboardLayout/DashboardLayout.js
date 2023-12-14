@@ -1,5 +1,5 @@
-import React from "react";
-import { Breadcrumb, DatePicker, Layout, Menu, theme as AntTheme } from "antd";
+import React, { useEffect } from "react";
+import { Breadcrumb, Layout, Menu, theme as AntTheme } from "antd";
 import { getUserFromLocalStorage } from "src/utils/helper";
 import { useNavigate } from "react-router-dom";
 import { LOGIN_ROUTE } from "src/utils/constants/routes";
@@ -14,15 +14,17 @@ const items = new Array(3).fill(null).map((_, index) => ({
 }));
 
 const DashboardLayout = (props) => {
+  const localUser = getUserFromLocalStorage();
   const navigate = useNavigate();
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = AntTheme.useToken();
 
-  const localUser = getUserFromLocalStorage();
-  if (!localUser.isLoggedIn) {
-    return navigate(LOGIN_ROUTE);
-  }
+  useEffect(() => {
+    if (!localUser?.isLoggedIn) {
+      navigate(LOGIN_ROUTE);
+    }
+  }, [localUser]);
 
   return (
     <Layout
