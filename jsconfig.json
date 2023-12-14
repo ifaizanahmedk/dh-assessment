@@ -4,5 +4,5 @@
     "jsx": "preserve"
   },
   "exclude": ["node_modules"],
-  "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "src/**/*"]
+  "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "src/**/*", "src"]
 }

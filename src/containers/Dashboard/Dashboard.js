@@ -1,100 +1,41 @@
 // src/components/Main.js
-import React from "react";
-import { Breadcrumb, DatePicker, Layout, Menu, theme as AntTheme } from "antd";
+import React, { useState } from "react";
+import { DatePicker } from "antd";
 import { Line } from "@nivo/line";
+import Card from "src/components/Card";
+import LineChart from "src/components/LineChart";
+import { ContentBody, ContentHeader, Spacer } from "./styled";
 
-const { Header, Content, Footer } = Layout;
-
-const items = new Array(3).fill(null).map((_, index) => ({
-  key: String(index + 1),
-  label: `nav ${index + 1}`,
-}));
+const { RangePicker } = DatePicker;
 
 const Dashboard = () => {
-  const {
-    token: { colorBgContainer, borderRadiusLG },
-  } = AntTheme.useToken();
+  const [dateRange, setDateRange] = useState(null);
+  const [filteredCompanies, setFilteredCompanies] = useState([]);
+  const [profileData, setProfileData] = useState({});
+  const [newsData, setNewsData] = useState([]);
 
-  const data = [
-    // Your static data here
-  ];
+  const handleDateChange = (dates) => {
+    setDateRange(dates);
+  };
 
   return (
     <>
-      <Layout>
-        <Header
-          style={{
-            position: "sticky",
-            top: 0,
-            zIndex: 1,
-            width: "100%",
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
-          <div className="demo-logo" />
-          <Menu
-            theme="dark"
-            mode="horizontal"
-            defaultSelectedKeys={["2"]}
-            items={items}
+      <div>
+        <ContentHeader>
+          <RangePicker
+            onChange={handleDateChange}
             style={{
-              flex: 1,
-              minWidth: 0,
+              float: "right",
             }}
           />
-        </Header>
-        <Content
-          style={{
-            padding: "0 48px",
-          }}
-        >
-          <Breadcrumb
-            style={{
-              margin: "16px 0",
-            }}
-          >
-            <Breadcrumb.Item>Home</Breadcrumb.Item>
-            <Breadcrumb.Item>List</Breadcrumb.Item>
-            <Breadcrumb.Item>App</Breadcrumb.Item>
-          </Breadcrumb>
-          <div
-            style={{
-              padding: 24,
-              minHeight: 380,
-              background: colorBgContainer,
-              borderRadius: borderRadiusLG,
-            }}
-          >
-            Content
-          </div>
-        </Content>
-        <Footer
-          style={{
-            textAlign: "center",
-          }}
-        >
-          Ant Design ©2023 Created by Ant UED
-        </Footer>
-      </Layout>
-      <div>
-        <DatePicker />
-        <Line
-          data={data}
-          xScale={{ type: "point" }}
-          yScale={{
-            type: "linear",
-            min: "auto",
-            max: "auto",
-            stacked: true,
-            reverse: false,
-          }}
-          axisTop={null}
-          axisRight={null}
-          axisBottom={null}
-          axisLeft={null}
-        />
-        {/* Add other components for company profiles and news */}
+        </ContentHeader>
+        <Spacer gap="6" />
+        <ContentBody>
+          <Card title="Price Graph">
+            <LineChart />
+          </Card>
+          {/* Add other components for company profiles and news */}
+        </ContentBody>
       </div>
     </>
   );

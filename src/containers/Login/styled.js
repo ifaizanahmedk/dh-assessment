@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { DEVICE, SPACING } from "theme";
+import { DEVICE, SPACING } from "src/theme";
 
 export const LoginContainer = styled.div`
   display: flex;

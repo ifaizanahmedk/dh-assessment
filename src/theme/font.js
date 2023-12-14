@@ -1,4 +1,4 @@
 export const FONT = {
-  PRIMARY: "Josefin Sans, Arial, Helvetica, sans-serif",
-  SECONDARY: "Rethink Sans, Arial, Helvetica, sans-serif",
+  PRIMARY: "Dela Gothic One, Arial, Helvetica, sans-serif",
+  SECONDARY: "Noto Sans, Arial, Helvetica, sans-serif",
 };

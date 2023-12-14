@@ -6,8 +6,8 @@ import {
   Input as AntInput,
 } from "antd";
 
-import { H2 } from "theme/typography";
-import { COLOR, SPACING } from "theme";
+import { H2 } from "src/theme/typography";
+import { COLOR, SPACING } from "src/theme";
 
 export const FormTitle = styled(H2)`
   color: ${({ theme }) => theme.colors.heading};

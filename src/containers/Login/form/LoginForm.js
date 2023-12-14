@@ -10,12 +10,25 @@ import {
   Input,
   StyledButton,
 } from "./styled";
-import { Paragraph } from "theme/typography";
+import { Paragraph } from "src/theme/typography";
 
 const LoginForm = ({ onLogin }) => {
+  // const success = () => {
+  //   messageApi.open({
+  //     type: "success",
+  //     content: "Login Successful.",
+  //   });
+  // };
+
+  // const error = () => {
+  //   messageApi.open({
+  //     type: "error",
+  //     content: "Login Failed.",
+  //   });
+  // };
+
   const onFinish = (values) => {
     onLogin(values);
-    console.log("Success:", values);
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -29,7 +42,7 @@ const LoginForm = ({ onLogin }) => {
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
     >
-      <FormTitle>Dubai Holding App</FormTitle>
+      <FormTitle>DH App</FormTitle>
       <Paragraph>Login to the Dashboard</Paragraph>
       <FormItem
         name="username"

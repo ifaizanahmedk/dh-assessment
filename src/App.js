@@ -1,42 +1,34 @@
-import React, { useState } from "react";
-import { message } from "antd";
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import { ThemeProvider, createGlobalStyle } from "styled-components";
 
-import Dashboard from "./containers/Dashboard";
 import Login from "./containers/Login";
+import DashboardLayout from "./layout/DashboardLayout";
+import RootLayout from "./layout/RootLayout";
+import {
+  DASHBOARD_ROUTE,
+  LOGIN_ROUTE,
+  ROOT_ROUTE,
+} from "./utils/constants/routes";
+import { ThemeConfig } from "./theme";
+
+import resetCSS from "src/assets/styles/reset.css";
+
+const GlobalStyle = createGlobalStyle`
+  ${resetCSS}
+`;
 
 function App() {
-  const [isLoggedIn, setLoggedIn] = useState(false);
-
-  const [messageApi, contextHolder] = message.useMessage();
-
-  const success = () => {
-    messageApi.open({
-      type: "success",
-      content: "Login Successful.",
-    });
-  };
-
-  const error = () => {
-    messageApi.open({
-      type: "error",
-      content: "Login Failed.",
-    });
-  };
-
-  const handleLogin = (values) => {
-    const { username, password } = values;
-    if (username === "ifaizanahmedk" && password === "12345678") {
-      success();
-      setLoggedIn(true);
-    } else {
-      error();
-    }
-  };
-
   return (
     <div className="App">
-      {contextHolder}
-      {isLoggedIn ? <Dashboard /> : <Login onLogin={handleLogin} />}
+      <GlobalStyle />
+      <ThemeProvider theme={ThemeConfig}>
+        <Routes>
+          <Route path={ROOT_ROUTE} exact element={<RootLayout />} />
+          <Route path={DASHBOARD_ROUTE} exact element={<DashboardLayout />} />
+          <Route path={LOGIN_ROUTE} element={<Login />} />
+        </Routes>
+      </ThemeProvider>
     </div>
   );
 }

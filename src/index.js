@@ -1,16 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { BrowserRouter as Router } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 
-import { ThemeProvider } from "styled-components";
-import { ThemeConfig } from "./theme";
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-	<React.StrictMode>
-		<ThemeProvider theme={ThemeConfig}>
-			<App />
-		</ThemeProvider>
-	</React.StrictMode>
+  <React.StrictMode>
+    <Router>
+      <App />
+    </Router>
+  </React.StrictMode>
 );
